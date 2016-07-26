@@ -11,9 +11,14 @@
 
 	function page_get($link, $id){
 		$id = (int) $id;
-		$query = "SELECT * FROM pages WHERE id='%d' AND type='portfolio'";
+		$query = "SELECT * FROM `pages` a LEFT JOIN images b ON b.parent = a.page_id WHERE a.page_id = %d";
 		$query = sprintf($query, $id);
-		$result = mysqli_fetch_assoc(mysqli_query($link, $query));
+		$res = mysqli_query($link, $query);
+		while($row=mysqli_fetch_assoc($res)){
+			$img[]=$row['src'];
+			$result = $row;
+			$result['img'] = $img;
+		}
 		return $result;
 	}
 

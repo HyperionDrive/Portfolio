@@ -11,7 +11,7 @@
 				<span class="image">
 					<img src="images/pages/<?=$page['image']?>" alt="" />
 				</span>
-				<a href="page.php?id=<?=$page['id']?>">
+				<a href="page.php?id=<?=$page['page_id']?>">
 					<h2><?=$page['title']?></h2>
 					<div class="content">
 						<p><?=page_info($page['review']);?></p>

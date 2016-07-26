@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июн 10 2016 г., 15:34
+-- Время создания: Июл 26 2016 г., 14:14
 -- Версия сервера: 10.1.13-MariaDB
 -- Версия PHP: 5.6.21
 
@@ -23,16 +23,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `images`
+--
+
+CREATE TABLE `images` (
+  `img_id` int(11) NOT NULL,
+  `src` text NOT NULL,
+  `parent` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `images`
+--
+
+INSERT INTO `images` (`img_id`, `src`, `parent`) VALUES
+(1, 'medical_max.jpg', 1),
+(2, 'luchiki_max.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `pages`
 --
 
 CREATE TABLE `pages` (
-  `id` int(11) NOT NULL,
+  `page_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `content` text NOT NULL,
+  `text` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `image` varchar(255) NOT NULL,
-  `image_max` varchar(255) NOT NULL,
+  `href` varchar(255) NOT NULL,
   `review` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -41,32 +61,43 @@ CREATE TABLE `pages` (
 -- Дамп данных таблицы `pages`
 --
 
-INSERT INTO `pages` (`id`, `title`, `content`, `date`, `image`, `image_max`, `review`, `type`) VALUES
-(1, 'Здоровье Нации Медицинский центр', 'Сайт находится по адресу: <a href="http://zdorovie48.ru/"> Посмотреть </a><br>Система управления сайтами компании Здоровье Нации, г.Липецк.', '2016-06-10 10:55:19', 'medical_min.jpg', 'medical_max.jpg', 'Система управления сайтами компании Здоровье Нации, г.Липецк.', 'portfolio'),
-(2, 'Лучики студия раннего развития детей', 'Сайт находится по адресу: <a href="http://luchiki48.ru/"> Посмотреть </a><br>С моей стороны была проведена работа по вёрстке страниц сайта, с последующей интеграцией с системой управления сайтом, разработанной на php фреймворке Laravel 5.', '2016-06-10 10:55:23', 'luchiki_min.jpg', 'luchiki_max.jpg', 'Вёртска и интеграция сайта компании Лучики', 'portfolio'),
+INSERT INTO `pages` (`page_id`, `title`, `text`, `date`, `image`, `href`, `review`, `type`) VALUES
+(1, 'Здоровье Нации Медицинский центр', 'Система управления сайтами компании Здоровье Нации, г.Липецк.', '2016-07-26 11:55:30', 'medical_min.jpg', 'http://zdorovie48.ru/', 'Система управления сайтами компании Здоровье Нации, г.Липецк.', 'portfolio'),
+(2, 'Лучики студия раннего развития детей', 'С моей стороны была проведена работа по вёрстке страниц сайта, с последующей интеграцией с системой управления сайтом, разработанной на php фреймворке Laravel 5.', '2016-07-26 11:55:45', 'luchiki_min.jpg', 'http://luchiki48.ru/', 'Вёртска и интеграция сайта компании Лучики', 'portfolio'),
 (3, 'Умная дверь', 'Страница <a href="http://nextdoor.su/">Посмотреть</a>', '2016-06-10 10:55:25', 'nextdoor_min.jpg', 'nextdoor_max.jpg', 'Разработка лендинга\r\n', 'portfolio'),
 (4, 'Контакты', 'EMAIL: rserg.work@gmail.com', '2016-06-10 11:14:25', 'none.jpg', 'contact.jpg', 'none', 'side'),
-(5, 'Обо мне', 'Высшее образование: Международный Институт Компьютерных Технологий - (ЛФ МИКТ)<br>Опыт работы: 2 года фронтенд и бэкенд разработки в веб студии', '2016-06-10 11:27:22', '', 'i.jpg', '', 'side');
+(5, 'Обо мне', 'Высшее образование: Международный Институт Компьютерных Технологий - (ЛФ МИКТ)<br>Опыт работы: 2 года фронтенд и бэкенд разработки в веб студии', '2016-07-26 12:10:48', 'none.jpg', 'i.jpg', '', 'side');
 
 --
 -- Индексы сохранённых таблиц
 --
 
 --
+-- Индексы таблицы `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`img_id`);
+
+--
 -- Индексы таблицы `pages`
 --
 ALTER TABLE `pages`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`page_id`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
+-- AUTO_INCREMENT для таблицы `images`
+--
+ALTER TABLE `images`
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT для таблицы `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

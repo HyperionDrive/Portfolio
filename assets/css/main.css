@@ -1675,7 +1675,7 @@
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #f2849e !important;
+			color: #12b11e !important;
 		}
 
 	strong, b {
@@ -1896,8 +1896,8 @@
 			}
 
 			.icon.style2:hover {
-				color: #f2849e;
-				border-color: #f2849e;
+				color: #12b11e;
+				border-color: #12b11e;
 			}
 
 			.icon.style2:active {
@@ -2177,8 +2177,8 @@
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-bottom-color: #f2849e;
-			box-shadow: inset 0 -1px 0 0 #f2849e;
+			border-bottom-color: #12b11e;
+			box-shadow: inset 0 -1px 0 0 #12b11e;
 		}
 
 	.select-wrapper {
@@ -2288,8 +2288,8 @@
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #f2849e;
-			box-shadow: 0 0 0 1px #f2849e;
+			border-color: #12b11e;
+			box-shadow: 0 0 0 1px #12b11e;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2509,8 +2509,8 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			color: #f2849e !important;
-			box-shadow: inset 0 0 0 2px #f2849e;
+			color: #12b11e !important;
+			box-shadow: inset 0 0 0 2px #12b11e;
 		}
 
 		input[type="submit"]:active,
@@ -2552,7 +2552,7 @@
 			input[type="button"].special:hover,
 			button.special:hover,
 			.button.special:hover {
-				background-color: #f2849e;
+				background-color: #12b11e;
 			}
 
 			input[type="submit"].special:active,
@@ -2730,7 +2730,7 @@
 					}
 
 			.tiles article.style1 > .image:before {
-				background-color: #f2849e;
+				background-color: #12b11e;
 			}
 
 			.tiles article.style2 > .image:before {
@@ -3354,3 +3354,5 @@
 			}
 
 		}
+
+@import url(custom.css) 

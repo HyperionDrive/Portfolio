@@ -11,7 +11,7 @@
 
 	function side_page_get($link, $id){
 		$id = (int) $id;
-		$query = "SELECT * FROM pages WHERE id='%d' AND type='side'";
+		$query = "SELECT * FROM pages WHERE page_id='%d' AND type='side'";
 		$query = sprintf($query, $id);
 		$result = mysqli_fetch_assoc(mysqli_query($link, $query));
 		return $result;

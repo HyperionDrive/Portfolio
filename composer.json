@@ -1,0 +1,12 @@
+{
+    "name": "localadmin04/portfolio",
+    "authors": [
+        {
+            "name": "HyperionDrive",
+            "email": "rserg.work@gmail.com"
+        }
+    ],
+    "require": {
+    	"illuminate/database":"*"
+    }
+}
