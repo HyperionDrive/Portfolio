@@ -3,7 +3,6 @@
 	<div class="inner">
 		<header>
 			<h1>Примеры моих работ по web-разработке</h1>
-			<p>Меня зовут Сергей, рад приветствовать на моём сайте, ниже вы можете ознакомиться с моими проектами</p>
 		</header>
 		<section class="tiles">
 		<?php foreach($pages as $page): ?>
