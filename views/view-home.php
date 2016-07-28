@@ -2,11 +2,11 @@
 <div id="main">
 	<div class="inner">
 		<header>
-			<h1>Примеры моих работ по web-разработке</h1>
+			<h1 class="idmain__header">Примеры моих работ по web-разработке</h1>
 		</header>
 		<section class="tiles">
 		<?php foreach($pages as $page): ?>
-			<article class="style<?=rand(1, 6)?>">
+			<article>
 				<span class="image">
 					<img src="images/pages/<?=$page['image']?>" alt="" />
 				</span>

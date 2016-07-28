@@ -1,7 +1,7 @@
 <!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1><?=$page['title']?></h1>
+							<h1 class="idmain__header"><?=$page['title']?></h1>
 
 							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 							  <!-- Indicators -->
