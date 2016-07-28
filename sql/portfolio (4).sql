@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 27 2016 г., 14:40
+-- Время создания: Июл 28 2016 г., 12:21
 -- Версия сервера: 10.1.13-MariaDB
 -- Версия PHP: 5.6.21
 
@@ -38,7 +38,16 @@ CREATE TABLE `images` (
 
 INSERT INTO `images` (`img_id`, `src`, `parent`) VALUES
 (1, 'medical_max.jpg', 1),
-(2, 'luchiki_max.jpg', 1);
+(3, 'medlife.jpg', 7),
+(4, 'medlife1.jpg', 7),
+(5, 'nextdoor_max.jpg', 3),
+(6, 'luchiki_max.jpg', 2),
+(7, 'andr_max_1.jpg', 6),
+(8, 'andr_max_2.jpg', 6),
+(9, 'psr.jpg', 10),
+(10, 'valency.jpg', 11),
+(11, 'valency1.jpg', 11),
+(12, 'cozn.jpg', 12);
 
 -- --------------------------------------------------------
 
@@ -97,7 +106,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT для таблицы `images`
 --
 ALTER TABLE `images`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT для таблицы `pages`
 --
