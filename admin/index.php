@@ -9,6 +9,11 @@ session_start();
 	if(isset($_SESSION['user'])){
 		$user = $_SESSION['user'];
 	}
+
+	if(isset($_SESSION['errors'])){
+		$errors = $_SESSION['errors'];
+		unset($_SESSION['errors']);
+	}
    
 session_write_close(); 
 
