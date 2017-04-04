@@ -6,6 +6,10 @@
 
 	$pages = page_all($link);
 
+	if(!$pages){
+		$pages = [];
+	}
+
 	require_once("views/view-header.php");
 
 	require_once("views/view-home.php");

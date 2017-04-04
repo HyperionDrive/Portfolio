@@ -3,6 +3,9 @@
 	function page_all($link){
 		$query = "SELECT * FROM pages WHERE type='portfolio'";
 		$result_temp = mysqli_query($link, $query);
+		if(!$result_temp){
+			return [];
+		}
 		for($i=0; $i<mysqli_num_rows($result_temp); $i++){
 			$result[] = mysqli_fetch_assoc($result_temp);
 		}
@@ -14,6 +17,11 @@
 		$query = "SELECT * FROM `pages` a LEFT JOIN images b ON b.parent = a.page_id WHERE a.page_id = %d";
 		$query = sprintf($query, $id);
 		$res = mysqli_query($link, $query);
+
+		if(!$res){
+			return [];
+		}
+
 		while($row=mysqli_fetch_assoc($res)){
 			$img[]=$row['src'];
 			$result = $row;
