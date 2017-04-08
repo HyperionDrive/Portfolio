@@ -1,15 +1,12 @@
 <?php
-function start(){
-	global $user;
-	global $errors;
+$start = function () use ($user, $errors){
 
 	if(isset($_GET['action'])){
 		login();
 	}
 	
-	
 	require_once("../views/admin/login.php");
-}
+};
 
 function login(){
 

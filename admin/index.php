@@ -2,7 +2,9 @@
 
 require_once("functions/db.php");
 
+$link = db_connect();
 $user = false;
+$errors = false;
 
 session_start(); 
 
@@ -40,11 +42,13 @@ if($user){
 	
 	if(function_exists($action)){
 		$action($user);
+	}elseif(isset($$action)){
+		$$action($user);
 	}
 
 }else {
 	require_once("functions/login.php");
-	start($user);
+	$start();
 }
 
 ?>

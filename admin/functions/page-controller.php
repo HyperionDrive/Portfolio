@@ -1,9 +1,9 @@
 <?php
 
 	function page_all(){
+		global $link;
 		global $user;
-
-		$link = db_connect();
+		
 		$query = "SELECT * FROM pages WHERE type='portfolio'";
 		$result_temp = mysqli_query($link, $query);
 		if(!$result_temp){
@@ -17,9 +17,8 @@
 	}
 
 	function page_get(){
+		global $link;
 		global $user;
-		
-		$link = db_connect();
 
 		isset($_GET['id']) ? $id = (int) $_GET['id'] : $id = 1;
 
@@ -43,6 +42,44 @@
 		$result = mb_substr($text, 0, $length);
 		return $result;
 	}
+
+	$pageAdd = function () use ($user, $link) {
+		$result = false;
+		$errors = false;
+
+		if(isset($_POST['title'])){
+			foreach ($_POST as $key=>&$input) {
+
+				if (strlen(trim($input))) {
+
+					if ($key == "text"){
+						$input = htmlspecialchars($input);
+					}else{
+						$input = strip_tags($input);
+					}
+
+					$result[$key] = $input;
+
+				} else {
+					$errors[$key] = "Зполните поле $key";
+					$result[$key] = $input;
+				}
+
+			}
+
+			if(!$errors){
+
+				$query = "INSERT INTO pages (`page_id`, `title`, `text`, `image`, `href`, `review`, `type`) VALUES (NULL, '%s', '%s', '%s', '%s', '%s', 'portfolio')";
+				$query = sprintf($query, $result['title'], $result['image'], $result['href'], $result['review'], $result['text']);
+				$res = mysqli_query($link, $query);
+
+				header("Location: http://portfolio.io/admin/index.php?route=page-controller&action=page_all");
+			}
+
+		}
+
+		require_once("../views/admin/pageAdd.php");
+	} 
 
 
 
